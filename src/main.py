@@ -1,3 +1,4 @@
+# Import Current Libraries
 import numpy as np
 import pandas as pd
 import datetime
@@ -21,3 +22,8 @@ import sys
 if not sys.warnoptions:
     warnings.simplefilter("ignore")
 np.random.seed(42)
+
+# Loading dataset to ensure no errors
+data = pd.read_csv("../data/marketing_campaign.csv", sep="\t")  # \t due to tab seperation
+print("Number of datapoints: ", len(data))
+data.head()

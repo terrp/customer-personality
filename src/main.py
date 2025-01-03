@@ -31,3 +31,4 @@ print(data.info())
 
 data = data.dropna()
 print("Amount of data-points: ", len(data))
+# Outputs msg + 2216, confirms NA values dropped

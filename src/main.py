@@ -43,3 +43,14 @@ for i in data["Dt_Customer"]:
 # Print maximum and minimum to find oldest and newest
 print("Longest time customer", min(dates))
 print("Newest Customer", max(dates))
+
+# Create list of the total days each shopper has been with us
+days = []
+day1 = max(dates)
+for i in dates:
+    delta = day1 - i
+    days.append(delta)
+
+# Create feature for the length of shoppers
+data["Shopper_Length"] = days
+data["Shopper_Length"] = pd.to_numeric(data["Shopper_Length"], errors="coerce")

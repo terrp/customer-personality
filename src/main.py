@@ -16,7 +16,7 @@ import warnings
 import sys
 if not sys.warnoptions:
     warnings.simplefilter("ignore")
-np.random.seed(42)
+np.random.seed(55)
 
 
 # Loading dataset to ensure no errors
@@ -26,3 +26,8 @@ data = pd.read_csv("data/marketing_campaign.csv", sep="\t")  # \t due to tab sep
 
 #Information for each Column
 print(data.info())
+# Income only has 2216 values so the other 184 should be dropped
+# Education, Marital Status, Dt_Customer are object types
+
+data = data.dropna()
+print("Amount of data-points: ", len(data))

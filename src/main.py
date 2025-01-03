@@ -32,3 +32,14 @@ print(data.info())
 data = data.dropna()
 print("Amount of data-points: ", len(data))
 # Outputs msg + 2216, confirms NA values dropped
+
+# convert DT_Customer to datetime with pandas
+data["Dt_Customer"] = pd.to_datetime(data["Dt_Customer"], dayfirst=True)
+dates = []
+for i in data["Dt_Customer"]:
+    i = i.date()
+    dates.append(i)
+
+# Print maximum and minimum to find oldest and newest
+print("Longest time customer", min(dates))
+print("Newest Customer", max(dates))

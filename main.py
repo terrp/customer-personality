@@ -10,6 +10,7 @@ def main():
     data = add_shopper_length(data)   # shopper length feature
     data = add_age(data)              # Age of customers
     data = calculate_spent(data)      # Total spent from each customer over 2 years
+    data = alone_or_partnered(data)   # Filter to determine if living by themself
 
     # Info on each column 
     print(data.info())
@@ -19,6 +20,8 @@ def main():
     print("Shopper Length Distribution:\n", data["Shopper_Length"].describe())
     print("Age of Customers", data["Age"].describe())
     print("Description of Total spent: ", data["Spent"].describe())
+
+    print(data["Marital_Status"].value_counts())
 
 if __name__ == "__main__":
     main()

@@ -22,3 +22,16 @@ def add_age(data):
 def calculate_spent(data):
     data["Spent"] = data["MntWines"] + data["MntFruits"]+ data["MntMeatProducts"] + data["MntFishProducts"] + data["MntSweetProducts"]
     return data
+
+# To determine if individual is providing for more than themselves
+def alone_or_partnered(data):
+    data["Living_With"] = data["Marital_Status"].replace({
+        "Married":"Partner",
+        "Together":"Partner",
+        "Single":"Alone",
+        "Divorced":"Alone",
+        "Widow":"Alone",
+        "Alone":"Alone",
+        "Absurd":"Alone",
+        "YOLO":"Alone"
+        })

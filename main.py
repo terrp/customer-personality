@@ -7,10 +7,13 @@ def main():
     data = load_and_clean_data(filepath)
 
     # Feature engineering SO FAR
-    data = add_shopper_length(data)
+    data = add_shopper_length(data)   # shopper length feature
+
+    # Info on each column 
+    print(data.info())
+    print("Amount of data-points: ", len(data))
 
     # Results SO FAR
-    print(data.info())
     print("Shopper Length Distribution:\n", data["Shopper_Length"].describe())
 
 if __name__ == "__main__":

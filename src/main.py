@@ -19,20 +19,6 @@ if not sys.warnoptions:
 np.random.seed(55)
 
 
-# Loading dataset to ensure no errors
-data = pd.read_csv("data/marketing_campaign.csv", sep="\t")  # \t due to tab seperation
-#print("Number of datapoints: ", len(data))
-#print(data.head())
-
-#Information for each Column
-print(data.info())
-# Income only has 2216 values so the other 184 should be dropped
-# Education, Marital Status, Dt_Customer are object types
-
-data = data.dropna()
-print("Amount of data-points: ", len(data))
-# Outputs msg + 2216, confirms NA values dropped
-
 # convert DT_Customer to datetime with pandas
 data["Dt_Customer"] = pd.to_datetime(data["Dt_Customer"], dayfirst=True)
 dates = []

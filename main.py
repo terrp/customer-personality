@@ -8,7 +8,8 @@ def main():
 
     # Feature engineering SO FAR
     data = add_shopper_length(data)   # shopper length feature
-    data = add_age(data)    # Age of customers
+    data = add_age(data)              # Age of customers
+    data = calculate_spent(data)      # Total spent from each customer over 2 years
 
     # Info on each column 
     print(data.info())
@@ -17,6 +18,7 @@ def main():
     # Results SO FAR
     print("Shopper Length Distribution:\n", data["Shopper_Length"].describe())
     print("Age of Customers", data["Age"].describe())
+    print("Description of Total spent: ", data["Spent"].describe())
 
 if __name__ == "__main__":
     main()

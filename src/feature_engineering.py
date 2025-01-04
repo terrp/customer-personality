@@ -35,3 +35,4 @@ def alone_or_partnered(data):
         "Absurd":"Alone",
         "YOLO":"Alone"
         })
+    return data

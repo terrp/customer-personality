@@ -20,8 +20,7 @@ def main():
     print("Shopper Length Distribution:\n", data["Shopper_Length"].describe())
     print("Age of Customers", data["Age"].describe())
     print("Description of Total spent: ", data["Spent"].describe())
-
-    print(data["Marital_Status"].value_counts())
+    print("Counts of individuals living situation", data["Living_With"].value_counts())
 
 if __name__ == "__main__":
     main()

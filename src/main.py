@@ -54,3 +54,6 @@ for i in dates:
 # Create feature for the length of shoppers
 data["Shopper_Length"] = days
 data["Shopper_Length"] = pd.to_numeric(data["Shopper_Length"], errors="coerce")
+
+print("All forms of education and their count:", data["Education"].value_counts(), "\n")
+print("Total categories of Marital Status:", data["Marital_Status"].value_counts())

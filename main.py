@@ -1,5 +1,5 @@
 from src.data_cleaning import load_and_clean_data
-from src.feature_engineering import add_shopper_length, add_age
+from src.feature_engineering import *
 
 def main():
     # Load and clean data

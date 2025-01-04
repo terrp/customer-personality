@@ -1,5 +1,5 @@
 from src.data_cleaning import load_and_clean_data
-from src.feature_engineering import add_shopper_length
+from src.feature_engineering import add_shopper_length, add_age
 
 def main():
     # Load and clean data
@@ -8,6 +8,7 @@ def main():
 
     # Feature engineering SO FAR
     data = add_shopper_length(data)   # shopper length feature
+    data = add_age(data)    # Age of customers
 
     # Info on each column 
     print(data.info())
@@ -15,6 +16,7 @@ def main():
 
     # Results SO FAR
     print("Shopper Length Distribution:\n", data["Shopper_Length"].describe())
+    print("Age of Customers", data["Age"].describe())
 
 if __name__ == "__main__":
     main()

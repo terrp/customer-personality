@@ -13,12 +13,8 @@ def add_shopper_length(data):
     
     return data
 
-data = pd.DataFrame({
-    "Dt_Customer": ["01-01-2020", "01-06-2021", "15-03-2019"]
-})
+# Create list of Age from Year_Birth
+def add_age(data):
+    data["Age"] = 2025-data["Year_Birth"]
+    return data
 
-# Apply the function
-data = add_shopper_length(data)
-
-# Output
-print(data)

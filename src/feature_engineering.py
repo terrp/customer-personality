@@ -18,3 +18,7 @@ def add_age(data):
     data["Age"] = 2025-data["Year_Birth"]
     return data
 
+# Total Spending for each Customer
+def calculate_spent(data):
+    data["Spent"] = data["MntWines"] + data["MntFruits"]+ data["MntMeatProducts"] + data["MntFishProducts"] + data["MntSweetProducts"]
+    return data

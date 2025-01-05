@@ -1,3 +1,22 @@
+# Import Current Libraries
+import numpy as np
+import pandas as pd
+import datetime
+import matplotlib
+import matplotlib.pyplot as plt
+from matplotlib import colors
+import seaborn as sns
+from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+from sklearn.cluster import KMeans
+from sklearn.cluster import AgglomerativeClustering
+from sklearn import metrics
+import warnings
+import sys
+if not sys.warnoptions:
+    warnings.simplefilter("ignore")
+np.random.seed(55)
 from src.data_cleaning import load_and_clean_data
 from src.feature_engineering import *
 

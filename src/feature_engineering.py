@@ -36,3 +36,8 @@ def alone_or_partnered(data):
         "YOLO":"Alone"
         })
     return data
+
+def children_count(data):
+    data["Children_Count"] = data["Kidhome"] + data["Teenhome"]
+    return data
+

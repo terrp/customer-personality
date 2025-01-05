@@ -20,7 +20,7 @@ def add_age(data):
 
 # Total Spending for each Customer
 def calculate_spent(data):
-    data["Spent"] = data["MntWines"] + data["MntFruits"]+ data["MntMeatProducts"] + data["MntFishProducts"] + data["MntSweetProducts"]
+    data["Spent"] = data["Wines"] + data["Fruits"]+ data["Meat"] + data["Fish"] + data["Sweets"] + data["Gold"]
     return data
 
 # To determine if individual is providing for more than themselves

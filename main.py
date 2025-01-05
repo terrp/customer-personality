@@ -34,16 +34,13 @@ def main():
     data = family_size(data)          # Count of all members in house
     data = add_education(data)        # Filter Education into 3 groups
 
-    # Info on each column 
-    print(data.info())
-    print("Amount of data-points: ", len(data))
-
     # Drop features that are no longer relevant
     to_drop = ["Marital_Status", "Dt_Customer", "Z_CostContact", "Z_Revenue", "Year_Birth", "ID"]
     data = data.drop(to_drop, axis=1)
 
     # Describe all of the data so far
-    print(data.describe())
+    with pd.option_context('display.max_columns', None):
+        print(data.describe())
     
 
 if __name__ == "__main__":

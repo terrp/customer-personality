@@ -37,7 +37,11 @@ def alone_or_partnered(data):
         })
     return data
 
+# Children Count to make Family size feature
 def children_count(data):
     data["Children_Count"] = data["Kidhome"] + data["Teenhome"]
     return data
 
+def family_size(data):
+    data["Family_Size"] = data["Living_With"].replace({"Partner": 2, "Alone": 1}) + data["Children_Count"]
+    return data

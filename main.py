@@ -12,6 +12,7 @@ def main():
     data = calculate_spent(data)      # Total spent from each customer over 2 years
     data = alone_or_partnered(data)   # Filter to determine if living by themself
     data = children_count(data)       # Count amount of children per household
+    data = family_size(data)
 
     # Info on each column 
     print(data.info())
@@ -23,6 +24,7 @@ def main():
     print("Description of Total spent: ", data["Spent"].describe())
     print("Counts of individuals living situation", data["Living_With"].value_counts())
     print("Counts of houses with sets of children", data["Children_Count"].value_counts())
+    print("Counts of houses with sets of children", data["Family_Size"].value_counts())
 
 if __name__ == "__main__":
     main()

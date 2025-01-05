@@ -45,3 +45,14 @@ def children_count(data):
 def family_size(data):
     data["Family_Size"] = data["Living_With"].replace({"Partner": 2, "Alone": 1}) + data["Children_Count"]
     return data
+
+# Group Education into three categories
+def add_education(data):
+    data["Education"] = data["Education"].replace({
+        "Graduation": "Graduate",
+        "PhD": "Higher_Education",
+        "Master": "Higher_Education",
+        "2n Cycle": "Undergraduate",
+        "Basic": "Undergraduate"
+    })
+    return data

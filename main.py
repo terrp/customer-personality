@@ -42,6 +42,8 @@ def main():
     with pd.option_context('display.max_columns', None):
         print(data.describe())
     '''
+
+    data.to_csv("data/processed_data.csv", index=False)
             
     # Drop outliers in the data (noticed after plotting)
     data = data[(data["Age"] < 95) & (data["Income"] < 450000)]

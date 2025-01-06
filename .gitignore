@@ -6,4 +6,4 @@ __pycache__/
 venv/
 
 # Ignore notebooks
-notebooks/
+*.ipynb

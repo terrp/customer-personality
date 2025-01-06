@@ -12,10 +12,16 @@ def relative_plot(data):
     data["Is_Parent"] = data["Is_Parent"].astype("category")
     To_Plot = ["Income", "Recency", "Family_Size", "Age", "Spent", "Shopper_Length", "Is_Parent"]
     print("Relative mapping of possibly related features: Data Subset")
-    plt.figure()
-    sns.pairplot(data[To_Plot], hue= "Is_Parent",palette= (["#682F2F","#F3AB60"]))
-    
-    # Save and display plot to png
+
+    # Select only numeric columns for correlation matrix
+    numeric_data = data.select_dtypes(include=["number"])
+    corrmat = numeric_data.corr()
+
+    # Plot correlation heatmap
+    plt.figure(figsize=(22, 22))  # Adjust size as needed
+    sns.heatmap(corrmat, annot=True, cmap="coolwarm", center=0)
+
+    # Save and display plot to PNG
     plt.savefig("relative_plot.png", dpi=300, bbox_inches="tight")
-    print("Plot saved as 'relative_plot.png'.") 
+    print("Plot saved as 'relative_plot.png'.")
     plt.show()

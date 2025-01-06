@@ -42,6 +42,9 @@ def main():
     with pd.option_context('display.max_columns', None):
         print(data.describe())
     '''
+            
+    # Drop outliers in the data (noticed after plotting)
+    data = data[(data["Age"] < 95) & (data["Income"] < 450000)]
 
     # Plot and show data
     relative_plot(data)

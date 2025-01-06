@@ -47,6 +47,11 @@ def family_size(data):
     data["Family_Size"] = data["Living_With"].replace({"Partner": 2, "Alone": 1}) + data["Children_Count"]
     return data
 
+# Boolean 1 or 0 for if parent or not
+def add_is_parent(data):
+    data["Is_Parent"] = np.where(data["Children_Count"] > 0, 1, 0)
+    return data
+
 # Group Education into three categories
 def add_education(data):
     data["Education"] = data["Education"].replace({
@@ -56,8 +61,4 @@ def add_education(data):
         "2n Cycle": "Undergraduate",
         "Basic": "Undergraduate"
     })
-    return data
-
-def add_is_parent(data):
-    data["Is_Parent"] = np.where(data["Children_Count"] > 0, 1, 0)
     return data

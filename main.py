@@ -33,6 +33,7 @@ def main():
     data = children_count(data)       # Count amount of children per household
     data = family_size(data)          # Count of all members in house
     data = add_education(data)        # Filter Education into 3 groups
+    data = add_is_parent(data)        # Determine if individual is parent
 
     # Drop features that are no longer relevant
     to_drop = ["Marital_Status", "Dt_Customer", "Z_CostContact", "Z_Revenue", "Year_Birth", "ID"]

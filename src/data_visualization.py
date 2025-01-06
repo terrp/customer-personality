@@ -1,5 +1,5 @@
 import seaborn as sns
-import matplotlib as plt
+import matplotlib.pyplot as plt
 from matplotlib import colors
 
 # Default theme

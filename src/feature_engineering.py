@@ -59,5 +59,5 @@ def add_education(data):
     return data
 
 def add_is_parent(data):
-    data["Is_Parent"] = np.where(data.Children_Count > 0, 1, 0)
+    data["Is_Parent"] = np.where(data["Children_Count"] > 0, 1, 0)
     return data

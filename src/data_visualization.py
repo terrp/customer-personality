@@ -10,4 +10,8 @@ cmap = colors.ListedColormap(["#682F2F", "#9E726F", "#D6B2B1", "#B9C0C9", "#9F8A
 # Plot Income, Age, Recency, Spent, Family_Size, and Shopper_Length
 def relative_plot(data):
     To_Plot = ["Income", "Recency", "Family_Size", "Age", "Spent", "Shopper_Length"]
+    print("Relative mapping of possibly related features: Data Subset")
     plt.figure()
+    sns.pairplot(data[To_Plot], hue= "Is_Parent",palette= (["#682F2F","#F3AB60"]))
+    #Taking hue 
+    plt.show()

@@ -3,8 +3,6 @@ import numpy as np
 import pandas as pd
 import datetime
 import matplotlib
-from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
 from sklearn.cluster import AgglomerativeClustering
@@ -17,6 +15,7 @@ np.random.seed(55)
 from src.data_cleaning import load_and_clean_data
 from src.feature_engineering import *
 from src.data_visualization import *
+from src.data_preprocess import *
 
 def main():
     # Load and clean data
@@ -37,20 +36,25 @@ def main():
     to_drop = ["Marital_Status", "Dt_Customer", "Z_CostContact", "Z_Revenue", "Year_Birth", "ID"]
     data = data.drop(to_drop, axis=1)
 
+
+    # Drop outliers in the data (noticed after plotting)
+    data = data[(data["Age"] < 95) & (data["Income"] < 450000)]
+
+    #data.to_csv("data/processed_data.csv", index=False)
+    
+    label_encode(data)
+
+    print(data["Education"].value_counts())
+    print(data["Living_With"].value_counts())
+
     '''
     # Describe all of the data so far
     with pd.option_context('display.max_columns', None):
         print(data.describe())
-    '''
-
-    data.to_csv("data/processed_data.csv", index=False)
-            
-    # Drop outliers in the data (noticed after plotting)
-    data = data[(data["Age"] < 95) & (data["Income"] < 450000)]
 
     # Plot and show data
     relative_plot(data)
-    
+    '''
 
 if __name__ == "__main__":
     main()

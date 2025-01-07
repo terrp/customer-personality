@@ -43,9 +43,12 @@ def main():
     #data.to_csv("data/processed_data.csv", index=False)
     
     label_encode(data)
+    scaled_data = scale_data(data)        # returns copied and scaled ds
 
-    print(data["Education"].value_counts())
-    print(data["Living_With"].value_counts())
+
+    # Check Scaled data
+    print(scaled_data.head())
+
 
     '''
     # Describe all of the data so far

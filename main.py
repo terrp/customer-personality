@@ -16,6 +16,7 @@ from src.data_cleaning import load_and_clean_data
 from src.feature_engineering import *
 from src.data_visualization import *
 from src.data_preprocess import *
+from src.dimensionality_red import *
 
 def main():
     # Load and clean data
@@ -44,20 +45,7 @@ def main():
     
     label_encode(data)
     scaled_data = scale_data(data)        # returns copied and scaled ds
-
-
-    # Check Scaled data
-    print(scaled_data.head())
-
-
-    '''
-    # Describe all of the data so far
-    with pd.option_context('display.max_columns', None):
-        print(data.describe())
-
-    # Plot and show data
-    relative_plot(data)
-    '''
+    reduce_dimensions(scaled_data)
 
 if __name__ == "__main__":
     main()

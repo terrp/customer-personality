@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.decomposition import PCA
 
-# Takes in scaled dataset and reduces to primary components
+# Takes in scaled dataset and reduces to principle components
 def reduce_dimensions(data):
     pca = PCA(n_components=3)
     pca.fit(data)

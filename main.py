@@ -45,7 +45,8 @@ def main():
     
     label_encode(data)
     scaled_data = scale_data(data)        # returns copied and scaled ds
-    reduce_dimensions(scaled_data)
+    PCA_ds = reduce_dimensions(scaled_data)
+    
 
 if __name__ == "__main__":
     main()

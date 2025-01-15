@@ -42,4 +42,3 @@ tornado==6.4.2
 traitlets==5.14.3
 tzdata==2024.2
 wcwidth==0.2.13
-yellowbrick==1.5

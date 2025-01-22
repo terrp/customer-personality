@@ -80,24 +80,26 @@ Scikit-learn: For PCA and clustering algorithms.
 
 ### Installation
 
-Clone the repository:
+1. Clone the repository:
 
 git clone git@github.com:terrp/customer-personality.git
 
-Create a virtual environment:
+2. Create a virtual environment:
 
 python3 -m venv venv
 
-Activate the virtual environment:
+3. Activate the virtual environment:
 
 source venv/bin/activate   # For macOS/Linux
 venv\Scripts\activate    # For Windows
 
-Install dependencies:
+4. Install dependencies:
 
+```python
 pip install -r requirements.txt
+```
 
-Usage
+5. Usage
 
 Ensure the dataset is placed in the data/ directory.
 

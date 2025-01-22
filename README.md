@@ -81,21 +81,21 @@ Scikit-learn: For PCA and clustering algorithms.
 ### Installation
 
 1. Clone the repository:
-
+```
 git clone git@github.com:terrp/customer-personality.git
-
+```
 2. Create a virtual environment:
-
+```
 python3 -m venv venv
-
+```
 3. Activate the virtual environment:
-
+```
 source venv/bin/activate   # For macOS/Linux
 venv\Scripts\activate    # For Windows
-
+```
 4. Install dependencies:
 
-```python
+```
 pip install -r requirements.txt
 ```
 
@@ -104,24 +104,31 @@ pip install -r requirements.txt
 Ensure the dataset is placed in the data/ directory.
 
 Run the main analysis script:
+```
+python3 main.py
+```
+Run the jupyter notebook:
+```
+jupyter notebook
+```
+Open the `data_exploration.ipynb' notebook in Jupyter Interface:
+Run all cells sequentially except "Load and Clean Data" and "Feature engineering", as well as their sub categories.
+(This is because main.py creates a processed_data.csv, the notebook in this section shows the steps as to how)
+Once at "Description of Data", you can run all cells sequentially. 
 
-python analysis.py
-
-Visualizations and insights will be saved in the results/ directory.
-
-Results
+6. Results
 
 Identified key customer segments with unique spending patterns and preferences.
 
 Visualizations highlight actionable insights, such as identifying high-value customers or specific demographics to target.
 
-Challenges
+7. Challenges
 
 Balancing cluster sizes to avoid bias in analysis.
 
 Visualizing high-dimensional data in a meaningful way.
 
-Future Work
+8. Future Work
 
 Integrate additional customer datasets to enrich the analysis.
 
@@ -129,15 +136,7 @@ Develop predictive models to forecast customer behavior.
 
 Create a dashboard for interactive exploration of customer insights.
 
-Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or suggestions.
-
-License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-Acknowledgments
+## Acknowledgments
 
 Kaggle for providing the Customer Personality Analysis dataset.
 

@@ -41,12 +41,7 @@ def main():
     # Drop outliers in the data (noticed after plotting)
     data = data[(data["Age"] < 95) & (data["Income"] < 450000)]
 
-    #data.to_csv("data/processed_data.csv", index=False)
-    
-    label_encode(data)
-    scaled_data = scale_data(data)        # returns copied and scaled ds
-    PCA_ds = reduce_dimensions(scaled_data)
-    
+    data.to_csv("data/processed_data.csv", index=False)
 
 if __name__ == "__main__":
     main()

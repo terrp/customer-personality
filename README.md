@@ -116,6 +116,7 @@ jupyter notebook
 (This is because main.py creates a processed_data.csv, the notebook in this section shows the steps as to how)
 3. Once at "Description of Data", you can run all cells sequentially. 
 
+
 6. Results
 
 Identified key customer segments with unique spending patterns and preferences.

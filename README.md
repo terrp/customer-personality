@@ -111,10 +111,10 @@ Run the jupyter notebook:
 ```
 jupyter notebook
 ```
-Open the `data_exploration.ipynb' notebook in Jupyter Interface:
-Run all cells sequentially except "Load and Clean Data" and "Feature engineering", as well as their sub categories.
+1. Open the `data_exploration.ipynb' notebook in Jupyter Interface:
+2. Run all cells sequentially except "Load and Clean Data" and "Feature engineering", as well as their sub categories.
 (This is because main.py creates a processed_data.csv, the notebook in this section shows the steps as to how)
-Once at "Description of Data", you can run all cells sequentially. 
+3. Once at "Description of Data", you can run all cells sequentially. 
 
 6. Results
 
